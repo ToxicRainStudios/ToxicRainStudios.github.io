@@ -1,58 +1,95 @@
+/* General layout and colors */
 body {
-  font-family: sans-serif;
+  font-family: system-ui, sans-serif;
   margin: 0;
-  background: #121212;
+  background-color: #121212;
   color: #f0f0f0;
+  line-height: 1.6;
 }
+
+/* Header */
 header {
   text-align: center;
-  padding: 2rem;
-  background: #1e1e1e;
+  padding: 2.5rem 1rem;
+  background-color: #1e1e1e;
 }
 .logo {
   height: 80px;
+  margin-bottom: 1rem;
 }
+.tagline {
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* Main layout */
 main {
-  padding: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
 }
-.game-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+
+/* Section headings */
+section {
+  margin-bottom: 3rem;
 }
-.game-card {
-  background: #222;
+h2 {
+  border-bottom: 2px solid #444;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Project list */
+ul.project-list,
+ul.team-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-list li {
+  margin-bottom: 1rem;
+  background: #1c1c1c;
   padding: 1rem;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #fff;
-  flex: 1 1 200px;
+  border-radius: 8px;
   transition: background 0.2s;
 }
-.game-card:hover {
-  background: #333;
+.project-list li:hover {
+  background: #2a2a2a;
 }
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #1e1e1e;
-  font-size: 0.9em;
+.project-list a {
+  color: #66ccff;
+  font-weight: bold;
 }
-ul.project-list, ul.team-list {
-  list-style: none;
-  padding-left: 0;
+.project-list .description {
+  display: block;
+  margin-top: 0.25rem;
+  color: #aaa;
+  font-size: 0.95rem;
 }
 
-ul.project-list li, ul.team-list li {
+/* Team list */
+.team-list li {
+  background: #1c1c1c;
   margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
 }
 
+/* Links */
 a {
   color: #66ccff;
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
 
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1e1e1e;
+  font-size: 0.9rem;
+  color: #888;
+}
