@@ -38,3 +38,21 @@ footer {
   background: #1e1e1e;
   font-size: 0.9em;
 }
+ul.project-list, ul.team-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.project-list li, ul.team-list li {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: #66ccff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
