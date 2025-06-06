@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmeagleBus – Toxic Rain Studios</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+    <a href="index.html">← Back to Home</a>
+    <h1>SmeagleBus</h1>
+</header>
+
+<main>
+    <p><strong>SmeagleBus</strong> is a simple event bus implementation. It allows you to easily register listeners, post events, and handles events in priority order. It supports cancelable events, so if an event is canceled, further processing will stop.</p>
+
+    <h2>Installing</h2>
+    <p>Add <a href="https://www.jitpack.io/#strubium/SmeagleBus" target="_blank">Jitpack</a> to your <code>build.gradle</code> file:</p>
+    <pre><code>maven { url 'https://jitpack.io' }</code></pre>
+
+    <p>Then add SmeagleBus to your dependencies:</p>
+    <pre><code>implementation 'com.github.strubium:SmeagleBus:1.0.0'</code></pre>
+
+    <h2>Usage</h2>
+
+    <h3>Getting the Event Bus</h3>
+    <p>You can get the SmeagleBus instance like this:</p>
+    <pre><code>SmeagleBus bus = SmeagleBus.getInstance();</code></pre>
+
+    <h3>Registering Listeners</h3>
+    <p>You can register a listener for an event type by using the <code>listen()</code> method. You can also specify a custom priority (default is 5):</p>
+    <pre><code>
+bus.listen(MyEvent.class)
+   .priority(10)  // Optional: Set a custom priority
+   .subscribe(event -> {
+       System.out.println("Handling event with priority 10");
+   });
+    </code></pre>
+
+    <h3>Posting Events</h3>
+    <p>To post an event to the bus, use the <code>post()</code> method:</p>
+    <pre><code>bus.post(new MyEvent());</code></pre>
+
+    <p>Events are just classes. To make an event cancelable, extend <code>CancelableEvent</code>.</p>
+
+    <p>GitHub: <a href="https://github.com/strubium/SmeagleBus" target="_blank">strubium/SmeagleBus</a></p>
+</main>
+
+<footer>
+    <p>&copy; 2025 Toxic Rain Studios</p>
+</footer>
+</body>
+</html>
