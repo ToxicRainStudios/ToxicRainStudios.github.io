@@ -76,6 +76,28 @@ ul.team-list {
   border-radius: 6px;
 }
 
+.community {
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.discord-link {
+  display: inline-block;
+  background-color: #5865F2; /* Discord blurple */
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.2s ease;
+  margin-top: 1rem;
+}
+
+.discord-link:hover {
+  background-color: #4752c4;
+  text-decoration: none;
+}
+
+
 /* Links */
 a {
   color: #66ccff;

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instanceable – Toxic Rain Studios</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+    <a href="index.html">← Back to Home</a>
+    <h1>Instanceable</h1>
+</header>
+
+<main>
+    <p><strong>Instanceable</strong> is a lightweight utility for providing singleton-style instance management using Java reflection. It automatically handles instance creation and ensures only one instance per subclass—no need to declare static fields manually.</p>
+
+    <h2>Installing</h2>
+    <p>Add Jitpack to your <code>build.gradle</code> file:</p>
+    <pre><code>maven { url 'https://jitpack.io' }</code></pre>
+
+    <p>Then add the dependency to your project:</p>
+    <pre><code>implementation 'com.github.ToxicRainStudios:Instanceable:VERSION'</code></pre>
+    <p>Replace <code>VERSION</code> with the desired release tag (e.g. <code>1.0.0</code>).</p>
+
+    <h2>Usage</h2>
+    <h3>BaseInstanceable</h3>
+    <p>A base class that uses reflection to keep track of one instance per subclass. Makes it easy to use the singleton pattern across different class types.</p>
+
+    <h3>How It Works</h3>
+    <p>Use <code>BaseInstanceable.getInstance(MyClass.class)</code> to retrieve the singleton instance.</p>
+    <p>The subclass must have a no-arg constructor (can be private or protected).</p>
+
+    <h3>Example</h3>
+    <pre><code>public class MyService extends BaseInstanceable&lt;MyService&gt; {
+    private MyService() {
+        // Initialization logic
+    }
+
+    public void doSomething() {
+        System.out.println("Singleton logic executed.");
+    }
+}</code></pre>
+
+    <pre><code>// Usage
+MyService service = MyService.getInstance();
+service.doSomething();</code></pre>
+</main>
+
+<footer>
+    <p>&copy; 2025 Toxic Rain Studios</p>
+</footer>
+</body>
+</html>
